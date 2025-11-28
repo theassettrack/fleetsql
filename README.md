@@ -50,4 +50,4 @@ Contact our sales team at **sales@theassettrack.com**
 
 ---
 
-**by [Asset Track](https://assettrack.com)**
+**by [Asset Track](https://theassettrack.com)**
