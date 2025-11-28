@@ -44,4 +44,10 @@ Extracts vehicle telemetry from Wialon GPS tracking platform into PostgreSQL dat
 
 ---
 
+## Interested?
+
+Contact our sales team at **sales@theassettrack.com**
+
+---
+
 **by [Asset Track](https://assettrack.com)**
