@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FleetSQL — Wialon ETL Pipeline</title>
-    <meta name="description" content="Async parallel data processing with multi-token isolation for Wialon telematics">
-    <meta property="og:title" content="FleetSQL by Asset Track">
-    <meta property="og:description" content="Wialon ETL Pipeline Architecture">
+    <title>FleetSQL — Own Your Wialon Data | Unlimited Storage + SQL Access</title>
+    <meta name="description" content="Stop paying Wialon $0.50/unit/month for storage extensions. Get unlimited fleet data storage, full PostgreSQL access, and transformed data ready for visualization. Save $1,000s annually.">
+    <meta property="og:title" content="FleetSQL — Own Your Wialon Fleet Data Forever">
+    <meta property="og:description" content="Unlimited storage, SQL access, transformed data. Save 85% vs Wialon storage extensions."
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
@@ -353,6 +353,24 @@
             outline: none;
         }
 
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pricing-card-content {
+            flex-grow: 1;
+        }
+
+        .pricing-card-button {
+            margin-top: auto;
+        }
+
+        .pricing-btn::after {
+            display: none !important;
+        }
+
         .secondary-button {
             display: inline-flex;
             align-items: center;
@@ -501,7 +519,7 @@
             position: absolute;
             left: 60px;
             top: 100px;
-            bottom: 0;
+            bottom: 60px;
             width: 2px;
             background: #333;
             z-index: 1;
@@ -871,42 +889,37 @@
         }
 
         .pipeline-end {
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 40px;
+            margin-top: 64px;
+            padding: 64px 48px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(37, 99, 235, 0.04));
+            border-radius: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.15);
             position: relative;
+            overflow: hidden;
             animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-        .pipeline-end .cta-button {
-            margin-left: 100px;
-            position: relative;
         }
 
         .pipeline-end::before {
             content: '';
             position: absolute;
-            left: 60px;
-            top: 0;
-            bottom: 50%;
-            width: 2px;
-            background: #333;
-            transform: translateX(-50%);
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .pipeline-end::after {
             content: '';
             position: absolute;
-            left: 60px;
-            top: 50%;
-            width: 40px;
-            height: 2px;
-            background: #333;
-            transform: translateY(-50%);
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
-
-        /* Removed .pipeline-end-comet */
 
         @media (max-width: 1024px) {
             .features {
@@ -974,6 +987,7 @@
             .pipeline::before {
                 left: 30px;
                 top: 80px;
+                bottom: 50px;
                 /* Adjusted for smaller mobile bubbles */
             }
 
@@ -1018,21 +1032,18 @@
                 /* Hide connector on mobile for cleaner look */
             }
 
-            .pipeline-end::before {
-                left: 30px;
+            .pipeline-end {
+                padding: 48px 32px;
+                margin-top: 48px;
             }
 
-            .pipeline-end::after {
-                left: 30px;
-                width: 20px;
+            .pipeline-end h3 {
+                font-size: 26px !important;
             }
 
-            .pipeline-end .cta-button {
-                margin-left: 50px;
-                width: auto;
+            .pipeline-end p {
+                font-size: 15px !important;
             }
-
-            /* Removed .pipeline-end-comet styles */
         }
 
         @media (max-width: 600px) {
@@ -1053,6 +1064,7 @@
             .pipeline::before {
                 left: 30px;
                 top: 80px;
+                bottom: 50px;
             }
 
             /* Removed .pipeline::after */
@@ -1060,6 +1072,21 @@
             /* Removed .pipeline-end-comet */
 
             /* Removed @keyframes flowHorizontalMobile */
+
+            .pipeline-end {
+                padding: 40px 24px;
+                margin-top: 40px;
+            }
+
+            .pipeline-end h3 {
+                font-size: 24px !important;
+            }
+
+            .pipeline-end::before,
+            .pipeline-end::after {
+                width: 300px;
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -1067,109 +1094,110 @@
 <body>
     <div class="container">
         <section class="hero">
-            <div class="hero-tag">Enterprise-Grade Wialon Data Pipeline</div>
-            <h1>Turn Fleet Data Into<br><span>Recurring Revenue</span></h1>
-            <p class="hero-subtitle">White-label Wialon ETL platform for solution integrators. Deploy professional data pipelines for your clients in minutes—charge monthly, scale infinitely.</p>
+            <div class="hero-tag">UNLIMITED DATA STORAGE FOR WIALON</div>
+            <h1>Your Fleet Data.<br><span>Your Database.</span></h1>
+            <p class="hero-subtitle">Keep your fleet data forever in your own PostgreSQL database. Query it with SQL. Connect any visualization tool. No data loss. No storage limits.</p>
             <div class="hero-cta">
                 <a href="mailto:sales@theassettrack.com" class="cta-button">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
-                    Schedule Demo
+                    Schedule Your Demo
                 </a>
                 <a href="#pipeline" class="secondary-button">See How It Works →</a>
             </div>
             <p style="font-size: 13px; color: #666; margin-top: 24px;">
-                ✓ Trusted by solution integrators managing 10,000+ vehicles<br>
-                ⚡ Limited: Only 5 integration slots available this quarter
+                ✓ Full PostgreSQL access • Unlimited storage • Pre-transformed data<br>
+                ✓ 30-day money-back guarantee • No credit card required
             </p>
         </section>
 
         <section class="stats">
             <div class="stat">
-                <div class="stat-number">85%</div>
-                <div class="stat-label">Lower Operational Costs</div>
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Data Retention Period</div>
             </div>
             <div class="stat">
                 <div class="stat-number">$0</div>
-                <div class="stat-label">Integration Fees</div>
+                <div class="stat-label">Extra Storage Fees</div>
             </div>
             <div class="stat">
-                <div class="stat-number">48hr</div>
-                <div class="stat-label">Go-Live Timeline</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">SQL Query Flexibility</div>
             </div>
         </section>
 
-        <h2 class="section-title">The Business Case</h2>
-        <p class="section-subtitle">Why smart integrators choose FleetSQL for their data infrastructure</p>
+        <h2 class="section-title">What You Get</h2>
+        <p class="section-subtitle">Unlimited storage, full SQL access, data ready to visualize.</p>
 
         <section class="features">
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
-                <h3>Reduce Client Churn 40%</h3>
-                <p>Deliver consistent, accurate data your clients can trust. Automated quality checks prevent the errors that cause cancellations.</p>
+                <h3>Unlimited Data Retention</h3>
+                <p>Wialon deletes data after retention periods. Keep all your historical fleet data forever. No limits, no data loss.</p>
             </div>
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                    <path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
                 </svg>
-                <h3>Launch New Clients in 48 Hours</h3>
-                <p>White-label deployment with your branding. No development required—start generating revenue immediately.</p>
+                <h3>Full SQL Access</h3>
+                <p>Query your fleet data any way you want. Join tables, aggregate metrics, build custom reports. Complete PostgreSQL access with your own credentials.</p>
             </div>
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <h3>Predictable Unit Economics</h3>
-                <p>Volume-based pricing with transparent margins. Charge your clients 3-5x our cost and scale profitably.</p>
+                <h3>85% Less Than Wialon Storage</h3>
+                <p>Wialon storage extensions cost $0.50 per 400-day extension. For 5 years of data, you pay $2/unit/month. We give unlimited storage for $0.30/unit/month with annual billing.</p>
             </div>
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
                 </svg>
-                <h3>See the Full Picture</h3>
-                <p>Turn raw telematics data into beautiful dashboards that drive better decisions.</p>
+                <h3>Pre-Transformed Data</h3>
+                <p>Data comes cleaned and organized for visualization tools. Connect Grafana, Metabase, Power BI, or Tableau. No ETL work needed.</p>
             </div>
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
-                <h3>Only Pay for What You Use</h3>
-                <p>Transparent pricing that grows with your fleet. No surprises, no hidden fees.</p>
+                <h3>Historical Analytics</h3>
+                <p>Analyze trends over years. Compare patterns across seasons. Track improvements over time. Data Wialon deletes becomes your advantage.</p>
             </div>
             <div class="feature">
                 <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
                 </svg>
-                <h3>Never Work Alone</h3>
-                <p>Dedicated support team helps you get the most value from your fleet data.</p>
+                <h3>Isolated Databases Per Client</h3>
+                <p>Each client gets their own separate PostgreSQL database. Complete data isolation. Full control. No data mixing.</p>
             </div>
         </section>
 
         <section style="margin: 96px 0; padding: 48px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.02)); border-radius: 24px; border: 1px solid rgba(59, 130, 246, 0.1);">
-            <h2 class="section-title" style="margin-bottom: 48px;">"FleetSQL Paid for Itself in 3 Weeks"</h2>
+            <h2 class="section-title" style="margin-bottom: 48px;">Real Results</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
                 <div style="padding: 32px; background: rgba(0, 0, 0, 0.3); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
-                    <p style="font-size: 15px; line-height: 1.7; color: #ccc; margin-bottom: 24px;">"We were spending 15 hours/week on manual data exports. FleetSQL automated everything. Now we handle 3x more clients with the same team."</p>
+                    <p style="font-size: 15px; line-height: 1.7; color: #ccc; margin-bottom: 24px;">"We were paying $2/unit/month for Wialon storage extensions. FleetSQL gives us unlimited storage for $0.30/unit. That's $340/month saved. Data is already transformed—connects directly to Grafana."</p>
                     <div style="display: flex; align-items: center; gap: 12px;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #1d4ed8);"></div>
                         <div>
-                            <div style="font-weight: 600; color: #fff;">Michael Torres</div>
-                            <div style="font-size: 13px; color: #888;">CTO, Fleet Analytics Pro</div>
+                            <div style="font-weight: 600; color: #fff;">Ragnar Sethson</div>
+                            <div style="font-size: 13px; color: #888;">Founder, Keep the Change Sweden</div>
                         </div>
                     </div>
                 </div>
                 <div style="padding: 32px; background: rgba(0, 0, 0, 0.3); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05);">
-                    <p style="font-size: 15px; line-height: 1.7; color: #ccc; margin-bottom: 24px;">"Game changer for our business. We're now offering premium data services we couldn't have built ourselves. ROI was immediate."</p>
+                    <p style="font-size: 15px; line-height: 1.7; color: #ccc; margin-bottom: 24px;">"SQL access let us build dashboards our clients actually want. We can query any metric, any time period. This is real data ownership."</p>
                     <div style="display: flex; align-items: center; gap: 12px;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #6d28d9);"></div>
                         <div>
-                            <div style="font-weight: 600; color: #fff;">Sarah Chen</div>
-                            <div style="font-size: 13px; color: #888;">CEO, LogiTrack Solutions</div>
+                            <div style="font-weight: 600; color: #fff;">Khader Toure</div>
+                            <div style="font-size: 13px; color: #888;">CEO, Tourextracking</div>
                         </div>
                     </div>
                 </div>
@@ -1258,44 +1286,99 @@
         </section>
 
         <div class="pipeline-end">
-            <div class="pipeline-connector"></div>
-            <div class="pipeline-end-comet"></div>
-            <div style="text-align: center;">
-                <h3 style="font-family: 'Lora', serif; font-size: 28px; color: #fff; margin-bottom: 16px;">Ready to 10x Your Data Capacity?</h3>
-                <p style="font-size: 16px; color: #aaa; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Join the solution integrators automating fleet data workflows and scaling profitably.
+            <div style="position: relative; z-index: 1; text-align: center;">
+                <h3 style="font-family: 'Lora', serif; font-size: 32px; color: #fff; margin-bottom: 16px; line-height: 1.3;">See How Much You'll Save</h3>
+                <p style="font-size: 17px; color: #aaa; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Get a live demo with your actual Wialon data. See the SQL access, the transformed data, and your exact monthly savings.
                 </p>
-                <a href="mailto:sales@theassettrack.com?subject=FleetSQL Demo Request" class="cta-button" style="margin: 0 auto 24px;">
+                <a href="mailto:sales@theassettrack.com?subject=FleetSQL Demo Request" class="cta-button" style="margin: 0 auto 24px; display: inline-flex;">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="4" width="20" height="16" rx="2" />
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
-                    Schedule Your Demo Now
+                    Request Your Demo
                 </a>
-                <p style="font-size: 13px; color: #666;">
-                    ✓ 30-day money-back guarantee &nbsp;•&nbsp; ✓ No credit card required &nbsp;•&nbsp; ✓ Setup in 48 hours
+                <p style="font-size: 14px; color: #888; margin-top: 24px;">
+                    ✓ 30-day money-back guarantee &nbsp;•&nbsp; ✓ Setup included &nbsp;•&nbsp; ✓ No credit card required
                 </p>
             </div>
         </div>
 
         <section style="margin: 96px 0;">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">One flat rate per unit. Pick monthly or annual billing. All features included.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 900px; margin: 48px auto 0; align-items: end;">
+                <div class="pricing-card" style="display: flex; flex-direction: column; padding: 48px 40px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)); border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 20px; text-align: center; transition: all 0.3s ease;">
+                    <div>
+                        <h3 style="font-family: 'Lora', serif; font-size: 24px; color: #fff; margin-bottom: 16px;">Monthly Plan</h3>
+                        <div style="margin: 32px 0; min-height: 110px;">
+                            <div style="font-size: 48px; font-weight: 700; color: #fff; line-height: 1;">
+                                <span style="font-size: 32px; color: #888;">$</span>1
+                            </div>
+                            <div style="font-size: 14px; color: #888; margin-top: 8px;">per unit / month</div>
+                            <div style="font-size: 13px; color: transparent; margin-top: 12px;">&nbsp;</div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; margin: 32px 0; text-align: left;">
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Billed monthly</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Cancel anytime</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Full feature access</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ 30-day guarantee</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:sales@theassettrack.com?subject=FleetSQL Monthly Plan" class="secondary-button pricing-btn" style="width: 100%; justify-content: center; padding: 16px 32px;">Get Started</a>
+                </div>
+                <div class="pricing-card" style="display: flex; flex-direction: column; padding: 48px 40px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(37, 99, 235, 0.08)); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 20px; text-align: center; position: relative; box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);">
+                    <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #3b82f6, #1d4ed8); padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Most Popular</div>
+                    <div>
+                        <h3 style="font-family: 'Lora', serif; font-size: 24px; color: #fff; margin-bottom: 16px;">Annual Plan</h3>
+                        <div style="margin: 32px 0; min-height: 110px;">
+                            <div style="font-size: 48px; font-weight: 700; color: #fff; line-height: 1;">
+                                <span style="font-size: 32px; color: #888;">$</span>0.30
+                            </div>
+                            <div style="font-size: 14px; color: #888; margin-top: 8px;">per unit / month</div>
+                            <div style="font-size: 13px; color: #60a5fa; font-weight: 600; margin-top: 12px;">Save 70% vs monthly billing</div>
+                        </div>
+                        <ul style="list-style: none; padding: 0; margin: 32px 0; text-align: left;">
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Billed annually</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Priority support</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05);">✓ Custom integrations</li>
+                            <li style="padding: 12px 0; color: #aaa; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">✓ Dedicated account manager</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:sales@theassettrack.com?subject=FleetSQL Annual Plan - 70% Discount" class="cta-button pricing-btn" style="width: 100%; justify-content: center; padding: 16px 32px;">Get Started</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 48px; color: #888; font-size: 14px;">
+                All plans include unlimited storage, full SQL access, transformed data, and setup assistance.
+            </p>
+        </section>
+
+        <section style="margin: 96px 0;">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div style="max-width: 800px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 24px;">
                 <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">How quickly can I deploy for my first client?</summary>
-                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Most integrators are live within 48 hours. Our team handles the technical setup—you just provide your client's Wialon credentials and database details. No coding required.</p>
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">How long can I store data with FleetSQL?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Forever. Unlike Wialon, we don't delete historical data. Keep years of fleet data for trend analysis, compliance, and analytics.</p>
                 </details>
                 <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">What if my clients have custom requirements?</summary>
-                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">FleetSQL is fully customizable. We can add custom data transformations, integrate with additional APIs, or modify the pipeline to match your clients' specific needs. Premium support packages include dedicated development hours.</p>
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">What SQL access do I get?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Full PostgreSQL access with your own credentials. Query any data, join tables, create views, build custom aggregations. Connect via psql, DBeaver, DataGrip, or any PostgreSQL client. Complete control.</p>
                 </details>
                 <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">How much should I charge my clients?</summary>
-                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Most integrators charge 3-5x our platform cost. For example, if your client has 200 vehicles (our cost: $200/mo), you can charge $600-1000/mo. We provide pricing guidance and competitive analysis to help you maximize margins.</p>
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">How much will I actually save?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Wialon storage extensions cost $0.50 per 400-day extension. Storing 5 years = $2/unit/month. FleetSQL with annual billing is $0.30/unit/month for unlimited storage plus SQL access. For a 200-unit fleet, that saves $340/month versus Wialon storage alone.</p>
                 </details>
                 <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">What happens if I'm not satisfied?</summary>
-                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">We offer a 30-day money-back guarantee. If FleetSQL doesn't meet your expectations, we'll refund your entire first month—no questions asked. Plus, all setup work is free, so there's zero risk to try it.</p>
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">What visualization tools can I use?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Any PostgreSQL tool. Popular options: Grafana, Metabase, Power BI, Tableau, Looker Studio, or custom dashboards. We help configure your tool of choice.</p>
+                </details>
+                <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">Do I own the data?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Yes, 100%. It's in your dedicated PostgreSQL database with your credentials. Export, back up, migrate anywhere. Complete ownership. If you cancel, keep all your data.</p>
+                </details>
+                <details style="padding: 24px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; cursor: pointer;">
+                    <summary style="font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;">How is data separated for multiple clients?</summary>
+                    <p style="margin-top: 16px; color: #aaa; line-height: 1.7;">Each client has their own isolated database with separate credentials and Wialon tokens. Complete separation. Client A never sees Client B's data. You control access independently per database.</p>
                 </details>
             </div>
         </section>
